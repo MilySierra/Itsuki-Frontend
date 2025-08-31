@@ -1,0 +1,57 @@
+<ion-content fullscreen>
+  <div class="fondo">
+    <img src="assets/img/fondo.jpg"/>
+  </div>
+  <div class="superior">
+    <img src= "assets/img/logo_itsuki.png" width="110px" height="110px"/>
+    <h2>Itsuki</h2>
+    <h5>Auténtica comida japonesa</h5>
+  </div>
+
+  <div class="datos">
+    <h2>Bienvenido</h2>
+    <h6>Inicia sesión o regístrate para continuar</h6>
+
+    <ion-segment value="login">
+      <ion-segment-button value="login" [routerLink]="['/login']">
+        <ion-label>Iniciar Sesión</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="registro" [routerLink]="['/registro']">
+        <ion-label>Registrarse</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <h3>Nombre</h3>
+    <ion-item>
+      <ion-input [(ngModel)]="user.nombre" name="nombre" placeholder="Tu nombre"></ion-input> 
+    </ion-item>
+
+    <h3>Email</h3>
+    <ion-item>
+      <ion-input [(ngModel)]="user.email" name="email" placeholder="tu@email.com" type="email"></ion-input>
+    </ion-item>
+
+    <h3>Contraseña</h3>
+    <ion-item>
+      <ion-input [(ngModel)]="user.contrasena" name="contrasena" placeholder="........." type="password" ></ion-input>
+    </ion-item>
+
+    <h3>Verificar contraseña</h3>
+    <ion-item>
+      <ion-input [(ngModel)]="user.confirmarContrasena" name="confirmarContrasena" placeholder="........." type="password" ></ion-input>
+    </ion-item>
+
+    <div *ngIf="user.contrasena && user.confirmarContrasena && user.contrasena !== user.confirmarContrasena" style="color:red; font-family: Georgia, 'Times New Roman', Times, serif;">
+      Las contraseñas no coinciden
+    </div>
+
+    <ion-button (click)="registrarse()">Registrarse</ion-button>
+    
+  </div>
+
+  <div class="final">
+    <h6>2024 Itsuki. Todos los derechos reservados.</h6>
+  </div>
+
+</ion-content>

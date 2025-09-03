@@ -1,0 +1,47 @@
+<ion-content fullscreen>
+
+  <div class="busqueda">
+    <h2>Nuestros productos</h2>
+    <input type="text" id="buscar" placeholder="  Buscar productos...">
+  </div>
+
+  <div class="botones">
+      <ion-button (click)="getAllProduct()">
+        <img src="assets/icon/todo.png" alt="icon" width="20" height="20">
+        Todos
+      </ion-button>
+      <ion-button (click)="producto.tipo='sushi'; getByTipo()">
+        <img src="assets/icon/sushi.png" alt="icon" width="20" height="20">
+        Sushi
+      </ion-button>
+      <ion-button (click)="producto.tipo='ramen'; getByTipo()">
+        <img src="assets/icon/ramen.png" alt="icon" width="20" height="20">
+        Ramen
+      </ion-button>
+      <ion-button (click)="producto.tipo='bebida'; getByTipo()">
+        <img src="assets/icon/bebidas.png" alt="icon" width="20" height="20">
+        Bebidas
+      </ion-button>
+      <ion-button (click)="producto.tipo='postre'; getByTipo()">
+        <img src="assets/icon/postre.png" alt="icon" width="20" height="20">
+        Postres
+      </ion-button>
+  </div> 
+
+  <div class="productos">
+
+    <ion-list>
+        <ion-item *ngFor="let p of productos">
+          <ion-thumbnail slot="start">
+            <img [src]="p.imagen" alt="Imagen de {{p.nombre}}" class="img">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{p.nombre}}</h2>
+            <p class="text">{{p.descripcion}}</p>
+            <p><strong>{{p.precio | currency:'COP'}}</strong></p>
+          </ion-label>
+        </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

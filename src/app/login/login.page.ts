@@ -54,7 +54,7 @@ export class LoginPage implements OnInit {
           email: '',
           contrasena: '',
         };
-        this.router.navigate(['/registro']);
+        this.router.navigate(['/productos']);
       },
 
       error: (err) =>{

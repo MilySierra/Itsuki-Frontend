@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonIcon, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonItem, IonLabel, IonList, IonThumbnail, IonButton } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { timeOutline, starOutline, carOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IonContent, IonIcon, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonItem, IonLabel, IonList, IonThumbnail, IonButton],
 })
 export class HomePage {
-  constructor() {}
+  constructor() { 
+    addIcons({ timeOutline, starOutline, carOutline});
+  }
 }
+

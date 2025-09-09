@@ -1,0 +1,105 @@
+.header-card {
+  background: #d32f2f;
+  color: white;
+  padding: 24px;
+  
+  .restaurant-info {
+    text-align: center;
+    
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    
+    h1 {
+      font-size: 2rem;
+      margin: 16px 0;
+      font-weight: bold;
+    }
+    
+    .rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      
+      .star-icon {
+        color: #ffd700;
+        font-size: 18px;
+      }
+      
+      .rating-text {
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+ion-card {
+  margin: 16px;
+}
+
+ion-card-title {
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
+}
+
+ion-card-content {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+.contact-info {
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    gap: 16px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    .contact-icon {
+  font-size: 28px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: #d32f2f;
+}
+
+    .contact-details {
+      flex: 1;
+      
+      h3 {
+        margin: 0 0 6px 0;
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: #000;
+      }
+      
+      p {
+        margin: 4px 0;
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+ion-content {
+  --padding-start: 0;
+  --padding-end: 0;
+}

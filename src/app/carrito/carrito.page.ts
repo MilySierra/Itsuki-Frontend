@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './carrito.page.html',
   styleUrls: ['./carrito.page.scss'],
   standalone: true,
-  imports: [IonContent, CommonModule, FormsModule, IonList, IonItem, IonThumbnail, IonLabel, IonButton, RouterModule]
+  imports: [IonContent, CommonModule, FormsModule, IonList, IonItem, IonThumbnail, IonLabel, RouterModule]
 })
 export class CarritoPage implements OnInit {
 
@@ -20,6 +20,10 @@ export class CarritoPage implements OnInit {
   carrito: Carrito[] = [];
 
   ngOnInit() {
+    this.mostrarCarrito();
+  }
+
+  ionViewWillEnter() {
     this.mostrarCarrito();
   }
 

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonButton, IonList, IonItem, IonThumbnail, IonLabel } from '@ionic/angular/standalone';
 import { Producto, ProductService } from '../services/product-service';
-import { RouterModule } from "@angular/router";
+import { RouterModule, ActivatedRoute } from "@angular/router";
 import { CarritoService } from '../services/carrito-service';
 import { Auth } from '../services/auth';
 
@@ -26,10 +26,18 @@ export class ProductosPage implements OnInit {
 
   productos: Producto[] = [];
 
-  constructor(private productService: ProductService, private carritoService: CarritoService, private auth: Auth) { }
+  constructor(private productService: ProductService, private carritoService: CarritoService, private auth: Auth, private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getAllProduct();
+    this.router.queryParams.subscribe(params => {
+      const tipo = params['tipo'];
+      if (tipo) {
+        this.producto.tipo = tipo;
+        this.getByTipo();
+      } else {
+        this.getAllProduct();
+      }
+    });
   }
 
   getAllProduct(){

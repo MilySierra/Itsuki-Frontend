@@ -42,6 +42,7 @@ ion-content{
     overflow-x: auto; 
     flex-wrap: nowrap;
     scrollbar-width: none; 
+    color: black;
 
     ion-button{
         --background: white;
@@ -52,6 +53,7 @@ ion-content{
         --border-color: #dcdcdc;
         --background-activated:red; 
         --color-activated: white;
+        color: black;
 
         img {
             margin-right: 8px;
@@ -72,6 +74,10 @@ ion-content{
     ion-list{
         background: white ;
         border-radius: 8px;
+    }
+
+    h2{
+      font-weight: bold;
     }
 
     ion-item{
@@ -115,6 +121,7 @@ ion-content{
         --border-style: solid;
         --border-color: #dcdcdc;
         --color-activated: black;
+        color: black;
         }
         
     }

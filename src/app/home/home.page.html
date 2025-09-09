@@ -34,106 +34,50 @@
     </div>
   </div>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Destacados del día</ion-card-title>
-    </ion-card-header>
+  <div class="productos">
+    <h1>Destacados del día</h1>
 
-    <ion-card-content>
-      <ion-list>
-        <ion-item lines="none" class="product-item">
+    <ion-list>
+        <ion-item *ngFor="let p of productos">
           <ion-thumbnail slot="start">
-            <img alt="Ramen" src="assets/images/ejemplo.png" />
+            <img [src]="p.imagen" alt="Imagen de {{p.nombre}}" class="img">
           </ion-thumbnail>
           <ion-label>
-            <h2>Item</h2>
-            <p>categoría</p>
+            <h2>{{p.nombre}}</h2>
+            <p class="text">{{p.descripcion}}</p>
+            <p><strong>{{p.precio | currency:'COP'}}</strong></p>
+            <ion-button (click)="agregarAlCarrito(p)">Agregar al carrito</ion-button>
           </ion-label>
-          <div class="price-btn">
-            <span class="price">$precio</span>
-            <ion-button expand="block" size="small" color="danger">
-              Agregar al Carrito
-            </ion-button>
-          </div>
         </ion-item>
-
-        <ion-item lines="none" class="product-item">
-          <ion-thumbnail slot="start">
-            <img alt="Sushi" src="assets/images/ejemplo.png" />
-          </ion-thumbnail>
-          <ion-label>
-            <h2>Item</h2>
-            <p>categoría</p>
-          </ion-label>
-          <div class="price-btn">
-            <span class="price">$precio</span>
-            <ion-button expand="block" size="small" color="danger">
-              Agregar al Carrito
-            </ion-button>
-          </div>
-        </ion-item>
-
-        <ion-item lines="none" class="product-item">
-          <ion-thumbnail slot="start">
-            <img alt="Sushi" src="assets/images/ejemplo.png" />
-          </ion-thumbnail>
-          <ion-label>
-            <h2>Item</h2>
-            <p>categoría</p>
-          </ion-label>
-          <div class="price-btn">
-            <span class="price">$precio</span>
-            <ion-button expand="block" size="small" color="danger">
-              Agregar al Carrito
-            </ion-button>
-          </div>
-        </ion-item>
-
-        <ion-item lines="none" class="product-item">
-          <ion-thumbnail slot="start">
-            <img alt="Tempura" src="assets/images/ejemplo.png" />
-          </ion-thumbnail>
-          <ion-label>
-            <h2>Item</h2>
-            <p>categoría</p>
-          </ion-label>
-          <div class="price-btn">
-            <span class="price">$precio</span>
-            <ion-button expand="block" size="small" color="danger">
-              Agregar al Carrito
-            </ion-button>
-          </div>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
+    </ion-list>
+  </div>
 
   <div class="section">
     <h3 class="section-title">Categorías</h3>
     <div class="categories-grid">
       
-      <ion-card color="danger" class="category-card">
+      <ion-card color="danger" class="category-card" (click)="irAProductos('sushi')">
         <ion-card-content>
           <div class="category-icon">🍣</div>
           <span class="category-name">Sushi</span>
         </ion-card-content>
       </ion-card>
 
-      <ion-card color="dark" class="category-card">
+      <ion-card color="dark" class="category-card" (click)="irAProductos('ramen')">
         <ion-card-content>
           <div class="category-icon">🍜</div>
           <span class="category-name">Ramen</span>
         </ion-card-content>
       </ion-card>
 
-      <ion-card color="warning" class="category-card">
+      <ion-card color="warning" class="category-card" (click)="irAProductos('bebida')">
         <ion-card-content>
           <div class="category-icon">🥤</div>
           <span class="category-name">Bebidas</span>
         </ion-card-content>
       </ion-card>
 
-      <ion-card color="danger" class="category-card">
+      <ion-card color="danger" class="category-card" (click)="irAProductos('postre')">
         <ion-card-content>
           <div class="category-icon">🍡</div>
           <span class="category-name">Postres</span>

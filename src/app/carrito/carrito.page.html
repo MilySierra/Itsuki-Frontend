@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+ 
+  <div class="header">
+    <h2>Carrito de compras</h2>
+  </div>
+
+  <div class="productos">
+
+    <ion-list>
+        <ion-item *ngFor="let c of carrito">
+          <ion-thumbnail slot="start">
+            <img [src]="c.imagen" alt="Imagen de {{c.nombre_producto}}" class="img">
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{c.nombre_producto}}</h2>
+            <p>Cantidad: {{c.cantidad}}</p>
+            <p class="subtotal"><strong>{{c.subtotal | currency:'COP'}}</strong></p>
+          </ion-label>
+        </ion-item>
+    </ion-list>
+    <ion-button class="carrito" [routerLink]="'/productos'">Ir a productos</ion-button>
+  </div>
+</ion-content>

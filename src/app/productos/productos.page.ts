@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonButton, IonList, IonItem, IonThumbnail, IonLabel } from '@ionic/angular/standalone';
 import { Producto, ProductService } from '../services/product-service';
+import { RouterModule } from "@angular/router";
+import { CarritoService } from '../services/carrito-service';
+import { Auth } from '../services/auth';
 
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.page.html',
   styleUrls: ['./productos.page.scss'],
   standalone: true,
-  imports: [IonContent, CommonModule, FormsModule, IonButton, IonList, IonItem, IonThumbnail, IonLabel]
+  imports: [IonContent, CommonModule, FormsModule, IonButton, IonList, IonItem, IonThumbnail, IonLabel, RouterModule]
 })
 export class ProductosPage implements OnInit {
 
@@ -23,10 +26,10 @@ export class ProductosPage implements OnInit {
 
   productos: Producto[] = [];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private carritoService: CarritoService, private auth: Auth) { }
 
   ngOnInit() {
-    this.getAllProduct;
+    this.getAllProduct();
   }
 
   getAllProduct(){
@@ -49,6 +52,23 @@ export class ProductosPage implements OnInit {
       },
       error: (err) => {
         console.log("Error al cagar los productos", err);
+      }
+    })
+  }
+
+  agregarAlCarrito(producto: Producto){
+    const usuario = this.auth.obtenerUsuario();
+    if (!usuario){
+      alert("Debes iniciar sesión.");
+      return;
+    }
+
+    this.carritoService.saveProduct(usuario.id, producto.id).subscribe({
+      next: (carrito) => {
+        console.log("Producto agregado al carro exitosamente", carrito);
+      },
+      error: (err) => {
+        console.log("Error al cargar en el carrito", err);
       }
     })
   }

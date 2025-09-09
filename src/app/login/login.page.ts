@@ -48,7 +48,7 @@ export class LoginPage implements OnInit {
     this.auth.login(this.user.email, this.user.contrasena).subscribe({
       next: (usuario) => {
         console.log("Usuario logueado", usuario)
-        this.isLoggedIn = true;
+        this.auth.guardarSesion(usuario);
         console.log("Yupi")
         this.user = {
           email: '',

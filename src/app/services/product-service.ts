@@ -26,5 +26,5 @@ export class ProductService {
   getByTipo(tipo: String): Observable<Producto[]>{
     return this.httpClient.get<Producto[]>(`${this.arl}/producto/${tipo}`)
   }
-  
+
 }

@@ -39,9 +39,11 @@
             <h2>{{p.nombre}}</h2>
             <p class="text">{{p.descripcion}}</p>
             <p><strong>{{p.precio | currency:'COP'}}</strong></p>
+            <ion-button (click)="agregarAlCarrito(p)">Agregar al carrito</ion-button>
           </ion-label>
         </ion-item>
     </ion-list>
+    <ion-button class="carrito" [routerLink]="'/carrito'">Ir al carrito</ion-button>
   </div>
 
 </ion-content>

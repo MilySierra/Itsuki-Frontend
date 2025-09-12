@@ -1,5 +1,6 @@
 ion-content{
     --background: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .header {
@@ -9,9 +10,9 @@ ion-content{
     width: 100%;
     background: rgb(218, 36, 36);
     height: 120px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 
     h2{
-        font-family: Georgia, 'Times New Roman', Times, serif;
         color: white;
         align-items: center;
         font-size: 30px;
@@ -39,7 +40,7 @@ ion-content{
         --border-width: 1px;
         --border-style: solid;
         --border-color: #dcdcdc;
-         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
     }
 
@@ -51,21 +52,27 @@ ion-content{
         border-radius: 8px;
     }
 
+    h2{
+        font-weight: bold;
+        font-size: 16px;
+    }
+
     
     .subtotal {
         text-align: right;
         color: rgb(218, 36, 36);
     }
 
+    .precio {
+        color: rgb(218, 36, 36);
+    }
+
     ion-item ion-label{
-        color: black;
-        font-family: Georgia, 'Times New Roman', Times, serif;
 
         p{
             font-size: 15px;
             margin-top: 8px;
             margin-bottom: 8px;
-            color: black;
         }
         
     }
@@ -73,7 +80,6 @@ ion-content{
     .carrito{
         --background: rgb(218, 36, 36);
         text-transform: none;
-        font-family: Georgia, 'Times New Roman', Times, serif;
         --border-width: 1px;
         --border-style: solid;
         --border-color: #b8b4b4;
@@ -83,5 +89,102 @@ ion-content{
         width: 50%;
     }
 
+    .eliminar{
+        display: flex;
+        align-items: center;       
+        justify-content: space-between; 
+
+        h2{
+            margin: 0;
+        }
+    }
+
           
+}
+
+.total {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    --background:white;
+    width: 90%;
+    border-radius: 15px;
+    margin: 7px auto 15px auto;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: #c5bfbf;
+    box-shadow: 0 0 8px  rgba(0, 0, 0, 0.1);
+
+
+  h2 {
+    text-align: center;     
+    margin: 0;   
+    font-size: 20px;   
+    text-align: center;  
+    margin-bottom: 18px;  
+    color: black;    
+    margin-top: 15px;
+  }
+
+  .subtotal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    width: 90%;
+    color: #333;
+  }
+
+  .final{
+    display: flex;
+    margin-top: 15px;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    justify-content: space-between;
+    width: 95%;
+    margin-bottom: 20px;
+    border-top: 2px solid #dcdcdc;
+    padding: 10px 10px 0 10px;
+  }
+
+  .num{
+    font-weight: bold;
+    color: black;
+  }
+
+  .final2{
+    color: rgb(218, 36, 36);
+  }
+
+  ion-button{
+    --background:  rgb(218, 36, 36);
+    margin-bottom: 15px;
+    width: 90%;
+    color: white;
+    border-radius: 15px;
+    text-transform: none;
+    font-size: 17px;
+  }
+
+}
+
+.cantidad{
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+
+    span{
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    ion-button{
+        --border-color: #c5bfbf;
+        --background-activated:grey;
+        height: 20px;
+
+    }
 }

@@ -1,0 +1,290 @@
+ion-content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header{
+    position: relative;
+    background-color: rgb(218, 36, 36);
+    width: 100%;
+    height: 100px;
+    padding-top: 5px;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+
+    
+
+    h2{     
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        margin-left: 32px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    ion-button{
+        --background: rgb(218, 36, 36);
+        --background-activated: rgb(222, 135, 135);
+        --indicator-color: rgb(23, 3, 3);
+
+    }
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    --background:white;
+    width: 90%;
+    border-radius: 15px;
+    margin: 7px auto 15px auto;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: #dcdcdc;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    
+
+    .titulo1{
+        text-align: left;
+        width: 100%;
+        margin-bottom: 15px;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+
+    .datos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+        width: 100%;
+    }
+
+    .contacto{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+       
+        h5{
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        input{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dcdcdc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+    }
+
+    .dirCompleta{
+    margin-bottom: 15px;
+    --background:white;
+    width: 100%;
+    border-radius: 15px;
+    box-sizing: border-box;
+    height: 80px;
+    border: 2px solid #dcdcdc;
+    }
+    
+
+    ion-icon{
+        color:rgb(218, 36, 36);
+    }
+}
+
+.pago{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    --background:white;
+    width: 90%;
+    border-radius: 15px;
+    margin: 7px auto 15px auto;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: #dcdcdc;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    
+
+    .titulo1{
+        text-align: left;
+        width: 100%;
+        margin-bottom: 15px;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    ion-icon{
+        color: rgb(218, 36, 36);
+    }
+
+    .metodo{
+        gap: 15px;
+        width: 100%;
+    }
+
+    .pagar{
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 12px 15px;
+        border: 1px solid #dcdcdc;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        cursor: pointer;
+        background-color: white;
+        width: 100%;
+    }
+
+    .text{
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+
+        span{
+            font-weight: bold;
+            font-size: 17px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    }
+
+    .img{
+        margin-right: 10px;
+    }
+
+    .custom-radio {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #999;
+        border-radius: 50%;
+        position: relative; 
+    }
+
+    .pagar input[type="radio"]:checked + .custom-radio::after {
+        content: '';
+        width: 12px;
+        height: 12px;
+        background-color: #fc5050; 
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .pagar input[type="radio"] {
+        display: none; 
+    }
+
+}
+
+.tiempo{
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 12px 15px;
+        border: 1px solid #dcdcdc;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        cursor: pointer;
+        background-color: white;
+        width: 100%;
+
+}
+
+.tiempo input[type="radio"]:checked + .custom-radio::after {
+        content: '';
+        width: 12px;
+        height: 12px;
+        background-color: #fc5050; 
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+.tiempo input[type="radio"] {
+        display: none; 
+}
+
+.total {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    --background:white;
+    width: 90%;
+    border-radius: 15px;
+    margin: 7px auto 15px auto;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: #c5bfbf;
+    box-shadow: 0 0 8px  rgba(0, 0, 0, 0.1);
+
+
+  h2 {
+    text-align: center;     
+    margin: 0;   
+    font-size: 23px;   
+    text-align: center;  
+    margin-bottom: 18px;  
+    color: black;    
+    margin-top: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    
+  }
+
+  .subtotal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    width: 90%;
+    color: #333;
+  }
+
+  .final{
+    display: flex;
+    margin-top: 15px;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    justify-content: space-between;
+    width: 95%;
+    margin-bottom: 20px;
+    border-top: 2px solid #dcdcdc;
+    padding: 10px 10px 0 10px;
+  }
+
+  .num{
+    font-weight: bold;
+    color: black;
+  }
+
+  .final2{
+    color: rgb(218, 36, 36);
+  }
+
+  ion-button{
+    --background:  rgb(218, 36, 36);
+    margin-bottom: 15px;
+    width: 90%;
+    color: white;
+    border-radius: 15px;
+    text-transform: none;
+    font-size: 17px;
+  }
+
+}
+
+
+

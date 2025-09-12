@@ -36,6 +36,10 @@ export const routes: Routes = [
       loadComponent: () =>
         import('./carrito/carrito.page').then((m) => m.CarritoPage),
     },
+    {
+    path: 'checkout',
+    loadComponent: () => import('./checkout/checkout.page').then( m => m.CheckoutPage)
+    },
     ],
   },
 
@@ -54,4 +58,6 @@ export const routes: Routes = [
     path: '**',
     redirectTo: 'login',
   },
+  
+
 ];

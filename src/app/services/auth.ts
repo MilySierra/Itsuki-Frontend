@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 
 export interface User{
   id: number;
-  nombre: String;
-  email: String;
-  contrasena: String;
+  nombre: string;
+  email: string;
+  contrasena: string;
 }
 
 @Injectable({
@@ -18,11 +18,11 @@ export class Auth {
   httpClient = inject(HttpClient);
   private currentUser: User | null = null;
 
-  login(email:String, contrasena: String): Observable<User>{
+  login(email:string, contrasena: string): Observable<User>{
     return this.httpClient.post<User>(`${this.arl}/usuario/login`,{email,contrasena})
   }
 
-  registrarse(nombre:String, email:String, contrasena:String): Observable<User>{
+  registrarse(nombre:string, email:string, contrasena:string): Observable<User>{
     return this.httpClient.post<User>(`${this.arl}/usuario`,{nombre,email,contrasena})
   }
 

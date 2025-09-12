@@ -1,9 +1,12 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+  import type { CapacitorConfig } from '@capacitor/cli';
 
-const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'Itsuki-Frontend',
-  webDir: 'www'
-};
+  const config: CapacitorConfig = {
+    appId: 'io.ionic.starter',
+    appName: 'Itsuki-Frontend',
+    webDir: 'www',
+    server: {
+      cleartext: true
+    }
+  };
 
-export default config;
+  export default config;

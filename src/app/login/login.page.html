@@ -23,8 +23,11 @@
 
     <h3>Email</h3>
     <ion-item>
-      <ion-input [(ngModel)]="user.email" name="email" placeholder="tu@email.com" type="email" required></ion-input> 
+      <ion-input [(ngModel)]="user.email" name="email" placeholder="tu@email.com" type="email" required #email="ngModel"></ion-input> 
     </ion-item>
+    <div *ngIf="user.email && !user.email.includes('@')" style="color:red; font-family: Georgia, 'Times New Roman', Times, serif;">
+      Ingrese un correo válido (@)
+    </div>
 
     <h3>Contraseña</h3>
     <ion-item>

@@ -1,0 +1,100 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-button [routerLink]="['/carrito']">←</ion-button>
+    <h2>Checkout</h2>
+  </div>
+
+  <div class="info">
+    <h2 class="titulo1">
+      <ion-icon name="location-outline"></ion-icon>
+      Dirección de entrega</h2>
+    <h5 class="titulo1">Dirección completa</h5>
+    <input placeholder="Ej: cra 59#25b20, apt 303." class="dirCompleta">
+    <div class="datos">
+      <div class="contacto">
+        <h5>Ciudad</h5>
+        <input type="text" name="input-field" placeholder="Medellín">
+      </div>
+      <div class="contacto">
+        <h5>Télefono</h5>
+        <input type="text" name="input-field" placeholder="3103567582">
+      </div>
+    </div>
+  </div>
+
+  <div class="pago">
+    <h2 class="titulo1">
+      <ion-icon name="time-outline"></ion-icon>
+      Tiempo de entrega
+    </h2>
+
+    <div class="metodo">
+      <label class="tiempo">
+        <input type="radio" name="deliveryTime" value="fast" [(ngModel)]="selectedDeliveryTime">
+        <span class="custom-radio"></span>
+        <div class="text">
+          <span>Lo más pronto posible</span>
+          <p>30-45minutos</p>
+        </div>
+      </label>
+
+      <label class="tiempo">
+        <input type="radio" name="deliveryTime" value="slow" [(ngModel)]="selectedDeliveryTime">
+        <span class="custom-radio"></span>
+        <div class="text">
+          <span>Programar entrega</span>
+          <p>Cuando quieran</p>
+        </div>
+        
+      </label>
+    </div>
+  </div>
+
+  <div class="pago">
+    <h2 class="titulo1">
+      <ion-icon name="card-outline"></ion-icon>
+      Método de pago
+    </h2>
+
+    <div class="metodo">
+      <label class="pagar">
+        <input type="radio" name="payment" value="card" [(ngModel)]="selectedPayment">
+        <span class="custom-radio"></span>
+        <img src="assets/icon/tarjeta.png" alt="icon" width="50" height="50" class="img">
+        <div class="text">
+          <span>Pagar con tarjeta</span>
+          <p>Visa, Mastercard</p>
+        </div>
+      </label>
+
+      <label class="pagar">
+        <input type="radio" name="payment" value="cash" [(ngModel)]="selectedPayment">
+        <span class="custom-radio"></span>
+        <img src="assets/icon/dinero.png" alt="icon" width="50" height="50" class="img">
+        <div class="text">
+          <span>Pagar en efectivo</span>
+          <p>Pago contraentrega</p>
+        </div>
+        
+      </label>
+    </div>
+  </div>
+
+  <div class="total">
+    <h2>Resumen del pedido</h2>
+    <div class="subtotal">
+      <span>Subtotal</span>
+      <span class="num">{{ total | currency: 'COP'}}</span>
+    </div>
+    <div class="subtotal">
+      <span>Envío</span>
+      <span class="num">{{envio | currency: 'COP'}}</span>
+    </div>
+    <div class="final">
+      <span>Total</span>
+      <span class="final2">{{total + envio | currency: 'COP'}}</span>
+    </div>
+    <ion-button (click)="generarAlerta('Éxito', 'Su pedido está en camino')">Confirmar pago</ion-button>
+  </div>
+
+</ion-content>

@@ -39,6 +39,11 @@ export class LoginPage implements OnInit {
 
   login(){
 
+    if (!this.user.email.includes('@')) {
+      this.generarAlerta("Error","Ingresa un correo válido con @");
+      return;
+    }
+
     if (!this.user.email || !this.user.contrasena) {
       this.generarAlerta("Error","Por favor completa todos los campos.");
       return;

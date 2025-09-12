@@ -27,4 +27,8 @@ export class ProductService {
     return this.httpClient.get<Producto[]>(`${this.arl}/producto/${tipo}`)
   }
 
+  getById(id: number): Observable<Producto>{
+    return this.httpClient.get<Producto>(`${this.arl}/${id}`)
+  }
+
 }

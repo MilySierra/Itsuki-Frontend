@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonSegment, IonSegmentButton, IonLabel, IonItem, IonInput, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonSegment, IonSegmentButton, IonLabel, IonItem, IonInput, IonButton} from '@ionic/angular/standalone';
 import { Router, RouterLink } from '@angular/router';
 import { Auth } from '../services/auth';
 import { AlertController } from '@ionic/angular';
@@ -50,6 +50,11 @@ export class RegistroPage implements OnInit {
   }
 
   registrarse(){
+
+    if (!this.user.email.includes('@')) {
+      this.generarAlerta("Error","Ingresa un correo válido con @");
+      return;
+    }
 
     if (!this.user.nombre || !this.user.email || !this.user.contrasena || !this.user.confirmarContrasena) {
       this.generarAlerta("Error","Por favor completa todos los campos.");

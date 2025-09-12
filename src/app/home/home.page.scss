@@ -1,5 +1,6 @@
 ion-content{
     --background: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .header {
@@ -238,7 +239,6 @@ ion-item {
 
     h1 {
       color: #333;
-      font-family: Georgia, 'Times New Roman', Times, serif;
       text-align: left;
       margin-left: 20px;
       margin-top: 30px;
@@ -271,7 +271,6 @@ ion-item {
 
     ion-item ion-label{
         color: black;
-        font-family: Georgia, 'Times New Roman', Times, serif;
 
         p{
             font-size: 15px;
@@ -283,7 +282,6 @@ ion-item {
         ion-button{
         --background: white;
         text-transform: none;
-        font-family: Georgia, 'Times New Roman', Times, serif;
         --border-width: 1px;
         --border-style: solid;
         --border-color: #dcdcdc;
@@ -296,7 +294,6 @@ ion-item {
     .carrito{
         --background: rgb(218, 36, 36);
         text-transform: none;
-        font-family: Georgia, 'Times New Roman', Times, serif;
         --border-width: 1px;
         --border-style: solid;
         --border-color: #b8b4b4;

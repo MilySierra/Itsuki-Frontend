@@ -7,7 +7,7 @@
         <ion-icon name="person-outline"></ion-icon>
       </div>
       <div class="user-data">
-        <h2>Nombre</h2>
+        <h2>{{user.nombre}}</h2>
         <div class="badges">
           <span class="badge pedidos">pedidos</span>
           <span class="badge puntos">puntos</span>
@@ -23,15 +23,15 @@
     <ion-card-content>
       <ion-item lines="none">
         <ion-icon name="call-outline" slot="start"></ion-icon>
-        <ion-label>+57 número</ion-label>
+        <ion-label>+57 3291829012</ion-label>
       </ion-item>
       <ion-item lines="none">
         <ion-icon name="mail-outline" slot="start"></ion-icon>
-        <ion-label>correo@gmail.com</ion-label>
+        <ion-label>{{user.email}}</ion-label>
       </ion-item>
       <ion-item lines="none">
         <ion-icon name="location-outline" slot="start"></ion-icon>
-        <ion-label>dirección</ion-label>
+        <ion-label>Cra79#25b10</ion-label>
       </ion-item>
     </ion-card-content>
   </ion-card>
@@ -59,40 +59,6 @@
       </ion-item>
     </ion-card-content>
   </ion-card>
-
-<ion-card>
-  <ion-card-header>
-    <ion-card-title>Pedidos Recientes</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    <ion-list>
-      <ion-item lines="none">
-        <ion-label>
-          <h2>#Orden</h2>
-          <p>Fecha</p>
-          <p>Pedido</p>
-        </ion-label>
-        <div class="pedido-info" slot="end">
-          <div class="precio">$precio</div>
-          <ion-badge color="light">Entregado</ion-badge>
-        </div>
-      </ion-item>
-
-      <ion-item lines="none">
-        <ion-label>
-          <h2>#Orden</h2>
-          <p>Fecha</p>
-          <p>Pedido</p>
-        </ion-label>
-        <div class="pedido-info" slot="end">
-          <div class="precio">$precio</div>
-          <ion-badge color="light">Entregado</ion-badge>
-        </div>
-      </ion-item>
-    </ion-list>
-  </ion-card-content>
-</ion-card>
 
   <div class="logout-btn">
     <ion-button expand="block" fill="outline" color="danger" (click)="logout()">

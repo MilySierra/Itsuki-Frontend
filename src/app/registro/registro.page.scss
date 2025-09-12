@@ -1,3 +1,7 @@
+ion-content{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .fondo{
     position: fixed;
     top: 0;
@@ -29,13 +33,11 @@
     }
 
     h2{
-        font-family: Georgia, 'Times New Roman', Times, serif;
         font-weight: bold;
     }
 
     h5{
         margin-top: 20px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
         color: rgb(255, 255, 255);
 
     }
@@ -55,7 +57,6 @@
     align-items: center;
 
     h6{
-        font-family: Georgia, 'Times New Roman', Times, serif;
         color: gray;
         align-content: center;
         margin-bottom: 8%;
@@ -63,7 +64,6 @@
 
     h3{
         align-self: flex-start;
-        font-family:Georgia, 'Times New Roman', Times, serif;
         color: black;
         font-weight: bold;
         margin-bottom: 5%;
@@ -72,7 +72,6 @@
     }
 
     h2{
-        font-family: Georgia, 'Times New Roman', Times, serif;
         color: black;
         margin-bottom: 2%;
         font-weight: bold;
@@ -105,7 +104,6 @@
         font-size: 16px;
         color: black;
         border: 2px solid rgb(207, 207, 211);
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
     ion-button{
@@ -125,14 +123,12 @@
         font-size: 16px;
         color: grey;
         border: 2px solid rgb(207, 207, 211);
-        font-family: Georgia, 'Times New Roman', Times, serif;
         --inner-border-width: 0
     }
 
 }
 
 .final{
-    font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(255, 255, 255);
     text-align: center;
     margin-top: 10%;

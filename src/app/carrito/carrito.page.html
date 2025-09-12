@@ -12,11 +12,39 @@
             <img [src]="c.imagen" alt="Imagen de {{c.nombre_producto}}" class="img">
           </ion-thumbnail>
           <ion-label>
+            <div class="eliminar">
             <h2>{{c.nombre_producto}}</h2>
-            <p>Cantidad: {{c.cantidad}}</p>
+            <ion-button fill="clear" color="danger" size="small" 
+            (click)="eliminarProducto(c.id)">
+            <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+            </div>
+            <p class="precio">{{c.precio_producto | currency:'COP'}}</p>
+            <div class="cantidad">
+              <ion-button size="small" fill="outline" (click)="disminuirCantidad(c.id)">➖</ion-button>
+              <span>{{c.cantidad}}</span>
+              <ion-button size="small" fill="outline" (click)="aumentarCantidad(c.id_producto)">➕</ion-button>
+            </div>
             <p class="subtotal"><strong>{{c.subtotal | currency:'COP'}}</strong></p>
           </ion-label>
         </ion-item>
     </ion-list>
+  </div>
+
+  <div class="total">
+    <h2>Resumen del pedido</h2>
+    <div class="subtotal">
+      <span>Subtotal</span>
+      <span class="num">{{total | currency: 'COP'}}</span>
+    </div>
+    <div class="subtotal">
+      <span>Envío</span>
+      <span class="num">{{envio | currency: 'COP'}}</span>
+    </div>
+    <div class="final">
+      <span>Total</span>
+      <span class="final2">{{total + envio | currency: 'COP'}}</span>
+    </div>
+    <ion-button [routerLink]="['/checkout'] ">Proceder al pago</ion-button>
   </div>
 </ion-content>
